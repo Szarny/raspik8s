@@ -2,7 +2,7 @@ package privileged
 
 test_privileged_container_denied {
     results := deny with input as deployment(true)
-    count(results) != 0
+    count(results) == 0
 }
 
 test_nonprivileged_container_allowed {
