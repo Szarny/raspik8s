@@ -9,7 +9,7 @@ jobs:
     - name: Setup Conftest
       uses: artis3n/setup-conftest@v0
     - name: Conftest unit testing
-      run: "conftest verify policy; echo $?"
+      run: "sh policy/run_unittest.sh"
   verification:
     runs-on: ubuntu-latest
     steps:
@@ -17,5 +17,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Conftest
       uses: artis3n/setup-conftest@v0
-    - name: Conftest unit testing
-      run: "conftest test resources --policy policy --all-namespaces; echo $?"
+    - name: Conftest verification
+      run: "sh policy/run_verification.sh"
