@@ -17,5 +17,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Conftest
       uses: artis3n/setup-conftest@v0
+      with:
+        conftest_version: 0.25.0
     - name: Conftest verification
       run: "conftest test resources --policy policy --all-namespaces; echo $?"
