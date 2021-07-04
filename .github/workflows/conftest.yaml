@@ -9,7 +9,7 @@ jobs:
     - name: Setup Conftest
       uses: artis3n/setup-conftest@v0
     - name: Conftest unit testing
-      run: "sh policy/run_unittest.sh"
+      run: "conftest verify policy"
   verification:
     runs-on: ubuntu-latest
     steps:
@@ -18,4 +18,4 @@ jobs:
     - name: Setup Conftest
       uses: artis3n/setup-conftest@v0
     - name: Conftest verification
-      run: "sh policy/run_verification.sh"
+      run: "exit 1; echo $?"

@@ -1,2 +1,0 @@
-conftest verify policy
-echo $?
