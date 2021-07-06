@@ -1,4 +1,4 @@
-package privileged
+package main
 
 test_privileged_container_denied {
     results := deny with input as deployment(true)

@@ -1,4 +1,4 @@
-package privileged
+package main
 
 deny[{"msg": msg}] {
     input.kind == "Deployment"

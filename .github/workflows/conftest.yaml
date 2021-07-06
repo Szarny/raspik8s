@@ -8,6 +8,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Exec conftest
-      uses: YubicoLabs/action-conftest@v2
+      uses: instrumenta/conftest-action@master
       with:
         files: resources
+        policy: policy
+        namespace: main
