@@ -10,6 +10,4 @@ jobs:
     - name: Exec conftest
       uses: YubicoLabs/action-conftest@v2
       with:
-        files: resources/
-        policy: policy/
-        all-namespaces: true
+        files: resources
