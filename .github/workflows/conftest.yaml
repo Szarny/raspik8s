@@ -1,31 +1,15 @@
-name: Conftest unit testing and verification for itself
+name: Conftest
 on: [pull_request]
 
 jobs:
-  unit_testing:
+  conftest:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Setup node
-      uses: actions/setup-node@v2
-    - name: Install conftest
-      run: policy/install_conftest.sh
-    - name: Conftest unit testing
-      run: |
-        conftest verify policy
-        echo $0
-        
-  verification:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup node
-      uses: actions/setup-node@v2
-    - name: Install conftest
-      run: policy/install_conftest.sh
-    - name: Conftest verification
-      run: |
-        conftest test resources --policy policy --all-namespaces
-        echo $0
+    - name: Exec conftest
+      uses: YubicoLabs/action-conftest@v2
+      with:
+        files: resources/
+        policy: policy/
+        all-namespaces: true
