@@ -1,0 +1,3 @@
+[submodule "cluster-monitoring"] 
+  path = cluster-monitoring 
+  url = https://github.com/carlosedp/cluster-monitoring.git
