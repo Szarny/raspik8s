@@ -1,21 +1,15 @@
-name: Conftest unit testing and verification for itself
+name: Conftest
 on: [pull_request]
+
 jobs:
-  unit_testing:
+  conftest:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Setup Conftest
-      uses: artis3n/setup-conftest@v0
-    - name: Conftest unit testing
-      run: "conftest verify policy"
-  verification:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup Conftest
-      uses: artis3n/setup-conftest@v0
-    - name: Conftest unit testing
-      run: "conftest test resources --policy policy --all-namespaces"
+    - name: Exec conftest
+      uses: instrumenta/conftest-action@master
+      with:
+        files: resources
+        policy: policy
+        namespace: main
