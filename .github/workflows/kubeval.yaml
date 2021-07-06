@@ -1,0 +1,14 @@
+name: Kubeval
+on: [pull_request]
+
+jobs:
+  conftest:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Exec kubeval
+      uses: instrumenta/kubeval-action@master
+      with:
+        files: resources
+        version: "1.21.1"
